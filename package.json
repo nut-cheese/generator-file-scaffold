@@ -1,0 +1,67 @@
+{
+  "name": "generator-react-component",
+  "displayName": "generator react component file",
+  "description": "generate react component fastly",
+  "version": "0.0.1",
+  "publisher": "mrkou47",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.18.0"
+  },
+  "categories": [
+    "Languages"
+  ],
+  "keywords": [
+    "react",
+    "generator"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [{
+        "command": "grc.basicComponent",
+        "title": "generate basic react component"
+      },
+      {
+        "command": "grc.reduxComponent",
+        "title": "generate react component with redux"
+      },
+      {
+        "command": "grc.noStateComponent",
+        "title": "generate react component with redux"
+      }
+    ],
+    "menus": {
+      "explorer/context": [{
+          "command": "grc.basicComponent",
+          "group": "navigation"
+        },
+        {
+          "command": "grc.reduxComponent",
+          "group": "navigation"
+        },
+        {
+          "command": "grc.noStateComponent",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "main": "./out/extension",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "cp -f -r ./src/templates ./out && tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "copy": "cp -f -r ./src/templates ./out"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "chai": "^4.1.2",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6"
+  }
+}
