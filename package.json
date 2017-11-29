@@ -4,7 +4,7 @@
   "description": "generate react component fastly",
   "version": "0.0.1",
   "publisher": "mrkou47",
-  "icon": "images/icon.png",
+  "icon": "images/nut-cheese.png",
   "engines": {
     "vscode": "^1.18.0"
   },
