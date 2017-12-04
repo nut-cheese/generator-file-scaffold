@@ -2,7 +2,7 @@
   "name": "generator-react-component",
   "displayName": "generator react component file",
   "description": "generate react component fastly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "mrkou47",
   "icon": "images/nut-cheese.png",
   "engines": {
