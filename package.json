@@ -28,8 +28,8 @@
         "title": "generate react component with redux"
       },
       {
-        "command": "grc.noStateComponent",
-        "title": "generate react component with redux"
+        "command": "grc.stateLessComponent",
+        "title": "generate stateless react component"
       }
     ],
     "menus": {
@@ -42,7 +42,7 @@
           "group": "navigation"
         },
         {
-          "command": "grc.noStateComponent",
+          "command": "grc.stateLessComponent",
           "group": "navigation"
         }
       ]

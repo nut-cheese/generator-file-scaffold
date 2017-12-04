@@ -2,7 +2,7 @@ import { window, commands, Disposable, ExtensionContext, StatusBarAlignment, Sta
 import * as path from 'path';
 import * as fs from 'fs';
 
-type generateType = 'basic-comp' | 'redux-comp' | 'no-state';
+type generateType = 'basic-comp' | 'redux-comp' | 'stateless';
 
 export function activate(context: ExtensionContext) {
 
@@ -11,7 +11,7 @@ export function activate(context: ExtensionContext) {
       const isDir = fs.statSync(selectedFolder.path).isDirectory();
       if (isDir) {
         const pathObj = path.parse(selectedFolder.path);
-        new GenerateComponentFile(selectedFolder.path).generate('basic-comp');
+        new GenerateComponentFile(selectedFolder.path).generate(type);
       } else {
         window.showErrorMessage('Generate React Compnent failed: target file must be a directory');
       }
@@ -31,14 +31,14 @@ export function activate(context: ExtensionContext) {
     initGenerateComponentFile(selectedFolder, 'redux-comp');
   });
 
-  const noStateComponent = commands.registerCommand('grc.noStateComponent', selectedFolder => {
-    initGenerateComponentFile(selectedFolder, 'no-state');
+  const stateLessComponent = commands.registerCommand('grc.stateLessComponent', selectedFolder => {
+    initGenerateComponentFile(selectedFolder, 'stateless');
   });
 
   // Add to a list of disposables which are disposed when this extension is deactivated.
   context.subscriptions.push(basicComponent);
   context.subscriptions.push(reduxComponent);
-  context.subscriptions.push(noStateComponent);
+  context.subscriptions.push(stateLessComponent);
 }
 
 export class GenerateComponentFile {
